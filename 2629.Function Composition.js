@@ -2,12 +2,12 @@
  * @param {Function[]} functions
  * @return {Function}
  */
-var compose = function(functions) {
+var compose = function(fn) {
     return function(x) {
         let result = x;
         // Iterate over functions from right to left
-        for (let i = functions.length - 1; i >= 0; i--) {
-            result = functions[i](result);
+        for (let i = fn.length - 1; i >= 0; i--) {
+            result = fn[i](result);
         }
         return result;
     }
